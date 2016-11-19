@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
+var data = require('./test.json');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -28,9 +29,9 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         
         if (event.message && event.message.text) {           
-        	var happy = '😁';
+        	
             
-    		sendMessage(event.sender.id, {text: "Ashmin: " + happy});
+    		sendMessage(event.sender.id, {text: "Ashmin: " + "data.emojis."+event.message.text});
         }
     }
 

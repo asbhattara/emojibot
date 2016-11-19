@@ -28,7 +28,7 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         
         if (event.message && event.message.text) {           
-        	var happy = 'U+1F601';
+        	var happy = ':smiley:';
             
     		sendMessage(event.sender.id, {text: "Ashmin: " + happy});
         }

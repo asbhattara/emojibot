@@ -14,9 +14,12 @@ app.get('/', function (req, res) {
 
 // Facebook Webhook
 app.get('/webhook', function (req, res) {
-    if (req.query['hub.verify_token'] === 'testbot_verify_token') {
-        res.send(req.query['hub.challenge']);
-    } else {
-        res.send('Invalid verify token');
-    }
+    <?php
+
+$challenge = $_REQUEST['hub_challenge'];
+$verify_token = $_REQUEST['hub_verify_token'];
+
+if ($verify_token === 'my_token_code') {
+echo $challenge;
+	}
 });

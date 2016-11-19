@@ -30,6 +30,8 @@ app.post('/webhook', function (req, res) {
             sendMessage(event.sender.id, {text: "Ashmin: " + event.message.text});
         }
     }
+    var happy = 'U+1F601';
+    sendMessage(event.sender.id, {text: "Ashmin: " + happy});
     res.sendStatus(200);
 });
 

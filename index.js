@@ -32,8 +32,7 @@ app.post('/webhook', function (req, res) {
         
         if (event.message && event.message.text) {           
         	
-            var reply = data.happy;
-            console.log(reply);
+            var reply = data.[event.message.text];
     		sendMessage(event.sender.id, {text: reply});
         }
     }

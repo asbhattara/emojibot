@@ -28,10 +28,12 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         if (event.message && event.message.text) {
             sendMessage(event.sender.id, {text: "Ashmin: " + event.message.text});
+
+            var happy = ':)';
+    		sendMessage(event.sender.id, {text: "Ashmin: " + happy});
         }
     }
-    var happy = 'U+1F601';
-    sendMessage(event.sender.id, {text: "Ashmin: " + happy});
+
     res.sendStatus(200);
 });
 

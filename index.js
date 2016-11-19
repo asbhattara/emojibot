@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
 var fs = require("fs");
-var data = fs.readFileSync.('emoji.json');
+var jsonContent = fs.readFileSync.('emoji.json');
+var data = JSON.parse(jsonContent);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

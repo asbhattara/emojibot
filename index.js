@@ -33,7 +33,7 @@ app.post('/webhook', function (req, res) {
         if (event.message && event.message.text) {           
         	
             
-    		sendMessage(event.sender.id, {text: "Ashmin: " + data.emojis.[event.message.text]});
+    		sendMessage(event.sender.id, {text: "Ashmin: " + data.happy});
         }
     }
 

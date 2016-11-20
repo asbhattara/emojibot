@@ -33,9 +33,9 @@ app.post('/webhook', function (req, res) {
         if (event.message && event.message.text) {           
         	var input = event.message.text;
 
-        	if(input[0] == null) {
+        	/*if(input == null) {
         		sendMessage(event.sender.id, {text: "Could not find emoticons. Try something else!"});
-        	}
+        	}*/
 
         	for(i=0;i<input.length;i++) {
         		var reply = data[input][i];

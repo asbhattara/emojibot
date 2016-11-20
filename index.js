@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
 var fs = require("fs");
-var jsonContent = fs.readFileSync('emoji.json');
+var jsonContent = fs.readFileSync('helper.json');
 var data = JSON.parse(jsonContent);
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -34,7 +34,7 @@ app.post('/webhook', function (req, res) {
         	var input = event.message.text;
 
         	/*for(i=0;i<input.length;i++) {*/
-        		var reply = data[input][0];
+        		var reply = data[input];
     			sendMessage(event.sender.id, {text: reply});
         	/*}*/
             
